@@ -1,13 +1,135 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pointing-finger{
+  margin-top: -16rem;
+  z-index: 0;
+  padding-left: 5rem;
+}
+.side-spacer{
+  padding-left: 10rem;
+  padding-right: 10rem;
+  /* margin-top: 1rem; */
+  /* margin-bottom: 1rem; */
+}
+
+.web-only{
+  display: initial;
+}
+.mob-only{
+  display: none;
+}
+.circle{
+  background: none;
+  cursor: pointer;
+  margin: 10px;
+  transition: 1s;
+  position: relative;
+  overflow: hidden;
+  width: 18rem;
+  height: 18rem;
+  background-color: black;
+  background-position: center;
+  
+}
+.circle-text{
+  position: fixed;
+  top: 60%;
+  right: 0;
+  left: 0;
+  display: none;
+  transition: 5s;
+  font-weight: bolder;
+  color: #fff;
+  font-size: xx-large;
+  text-shadow: .1rem .1rem .5rem #000;
+}
+.circle:hover .circle-text{
+  display: block;
+}
+.circle::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  transition: 1s;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+.vc-orange{
+  background-color: #F77F00;
+}
+.vc-blue{
+  background-color: #003049;
+}
+.vc-red{
+  background-color: #d62828;
+}
+
+
+.vc-orange-1{
+  background-color: #f7800052;
+}
+.vc-blue-1{
+  background-color: #002f4948;
+}
+.vc-red-1{
+  background-color: #d6282848;
+}
+
+
+.circle-pr::before{
+  /* background-color: #F77F00; */
+  background-color: #f78000bd;
+}
+.circle-ad::before{
+  /* background-color: #003049; */
+  background-color: #002f49bf;
+}
+.circle-pl::before{
+  /* background-color: #d62828; */
+  background-color: #d62828cd;
+}
+
+.circle:hover::before{
+  height: 180%;
+}
+.steps{
+  /* position: ; */
+  /* height: 70%; */
+  left: 0;
+  bottom: 0;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+  only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .pointing-finger{
+    margin-top: -4rem;
+  }
+  .side-spacer{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .web-only{
+    display: none;
+  }
+  .mob-only{
+    display: initial;
+  }
+
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+
 }
